@@ -41,7 +41,8 @@ if (mktools_getConf('pageNotFoundHandling', 'FE')) {
 
 if (mktools_getConf('realUrlXclass', 'FE')) {
 	tx_rnbase::load('tx_mktools_util_RealUrl');
-	tx_mktools_util_RealUrl::registerXclass();
+	$realUrlXclass = tx_rnbase::makeInstance('tx_mktools_util_RealUrl');
+	$realUrlXclass->registerXclass();
 }
 
 require(tx_rnbase_util_Extensions::extPath('mktools').'scheduler/ext_localconf.php');
